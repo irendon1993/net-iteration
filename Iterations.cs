@@ -38,7 +38,8 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> Double(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            var doubleNumbers = numbers.Select(numbers => numbers * 2);
+            return doubleNumbers;
         }
 
 
