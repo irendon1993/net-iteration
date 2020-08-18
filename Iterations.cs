@@ -26,7 +26,8 @@ namespace DotnetIteration
         //
         public static IEnumerable<string> Yelling(List<string> words)
         {
-            throw new System.NotImplementedException();
+            var bigWords = words.Select(words => words.ToUpper());
+            return bigWords;
         }
 
 
