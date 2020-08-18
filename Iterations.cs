@@ -38,8 +38,7 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> Double(List<int> numbers)
         {
-            return numbers.Select(numbers => numbers * 2);
-
+            return numbers.Select(number => number * 2);
         }
 
 
@@ -51,7 +50,8 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> StringyIndexes(List<string> data)
         {
-            throw new System.NotImplementedException();
+            var newList = data.Select((thing, index) => $"{thing} is at index {index}");
+            return newList;
         }
 
 
@@ -61,7 +61,8 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenSurvive(List<int> data)
         {
-            throw new System.NotImplementedException();
+            var evenNumbers = data.Where(intergers => intergers % 2 == 0);
+            return evenNumbers;
         }
 
 
@@ -72,8 +73,10 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenIndexedSurvive(List<int> data)
         {
-            throw new System.NotImplementedException();
+            var evenIndexElement = data.Where((element, index) => index % 2 == 0);
+            return evenIndexElement;
         }
+
 
 
         // 
@@ -91,7 +94,10 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> BestMovieOfTheYear(List<Movie> data, int year)
         {
-            throw new System.NotImplementedException();
+            var ninetiesMovies = data.Where(movie => movie.Year == year && movie.Score >= 90);
+            var nameOfBestMovies = ninetiesMovies.Select(movie => movie.Name);
+            return nameOfBestMovies;
+
         }
 
 
@@ -101,7 +107,8 @@ namespace DotnetIteration
         // 
         public static bool EveryoneIsOdd(List<int> data)
         {
-            throw new System.NotImplementedException();
+            var oddPeople = data.All(intergers => intergers % 2 != 0);
+            return oddPeople;
         }
 
 
@@ -112,7 +119,8 @@ namespace DotnetIteration
         // 
         public static string FindTheNeedle(List<string> data)
         {
-            throw new System.NotImplementedException();
+            var needle = data.First(finder => finder.Contains("needle"));
+            return needle;
         }
 
 
@@ -123,7 +131,8 @@ namespace DotnetIteration
         // 
         public static int FindTheNeedleIndex(List<string> data)
         {
-            throw new System.NotImplementedException();
+            var needleIndex = data.FindIndex(element => element.Contains("needle"));
+            return needleIndex;
         }
 
 
@@ -134,7 +143,9 @@ namespace DotnetIteration
         // 
         public static bool SomeoneToLove(List<string> data)
         {
-            throw new System.NotImplementedException();
+            var love = data.Any(element => element.Count() == 4);
+            return love;
+
         }
     }
 }
