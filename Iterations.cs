@@ -38,8 +38,8 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> Double(List<int> numbers)
         {
-            var doubleNumbers = numbers.Select(numbers => numbers * 2);
-            return doubleNumbers;
+            return numbers.Select(numbers => numbers * 2);
+
         }
 
 
